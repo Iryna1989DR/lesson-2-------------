@@ -36,7 +36,9 @@
     }
     /* Base */
     
-    * {
+    *,
+    *::after,
+    *::before {
         box-sizing: border-box;
     }
     
@@ -68,6 +70,10 @@
         margin: 0;
         padding: 0;
         list-style-type: none;
+    }
+    
+    a {
+        display: inline-block;
     }
     
     .section {
@@ -252,7 +258,36 @@
         border: 2px solid var(--color-brand-normal);
         content: '';
     }
+    
+    .chefs-list {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .chefs-card {
+        display: flex;
+        gap: 40px 30px;
+        flex-wrap: nowrap;
+    }
+    
+    .chefs-item {
+        flex-basis: calc((100% - 30px) / 2);
+    }
+    
+    .chefs-text p {
+        margin-bottom: 24px;
+    }
+    
+    .chefs-text p:last-of-type {
+        margin-bottom: 0;
+    }
     /* Formats section */
+    
+    .formats-container {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+    }
     
     .format-card {
         height: 444px;
@@ -298,6 +333,7 @@
         border: 1px solid var(--color-primary-dark);
         padding: 0;
         cursor: pointer;
+        flex-shrink: 0;
     }
     
     .carousel-arrow {
@@ -313,10 +349,52 @@
     }
     /* contact section */
     
+    .contact-section {
+        padding-bottom: 96px;
+    }
+    
+    .contact-container {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+    }
+    
+    .contact-map {
+        flex-shrink: 0;
+        border-radius: 16px;
+        border: none;
+    }
+    
     .contact-title {
         margin-bottom: 16px;
     }
     /* footer */
+    
+    .footer {
+        padding: 32px 0;
+    }
+    
+    .footer-container {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .footer-nav,
+    .footer-address {
+        display: flex;
+        flex-basis: 50%;
+        gap: 20px;
+    }
+    
+    .footer-logo,
+    .footer-menu {
+        flex-grow: 1;
+    }
+    
+    .address-info,
+    .address-list {
+        flex-grow: 1;
+    }
     
     .address-link {
         color: var(--color-primary-light);
