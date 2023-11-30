@@ -112,6 +112,14 @@
     }
     /* Header */
     
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 32px;
+    }
+    
     .header-container {
         display: flex;
         align-items: center;
@@ -135,8 +143,8 @@
     
     .link {
         color: var(--color-primary-light);
-        line-height: 1.5;
         text-decoration: none;
+        transition: color 0.3s;
     }
     
     .link:hover {
@@ -146,7 +154,7 @@
     
     .hero-section {
         padding: 272px 0;
-        background-image: url('../img/main-baner.jpg');
+        background-image: linear-gradient( 102.76deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.6) 58.46%, rgba(18, 18, 17, 0) 90.36%), url('../img/main-baner.jpg');
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;
@@ -303,6 +311,11 @@
         background-image: linear-gradient( 180deg, rgba(49, 38, 26, 0) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
     }
     
+    .format-card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+    }
+    
     .formays-item {
         flex-basis: calc((100% - 40px) / 3);
     }
@@ -331,14 +344,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
         width: 44px;
         height: 44px;
-        border-radius: 50%;
-        background-color: transparent;
-        border: 1px solid var(--color-primary-dark);
         padding: 0;
+        fill: var(--color-primary-dark);
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px solid var(--color-primary-dark);
         cursor: pointer;
-        flex-shrink: 0;
     }
     
     .carousel-arrow {
@@ -347,10 +361,15 @@
     
     .carousel-button:hover {
         background-color: var(--color-primary-dark);
+        fill: var(--color-primary-light);
     }
     
     .carousel-button:hover .carousel-arrow {
         fill: var(--color-primary-light);
+    }
+    
+    .carousel-button.next {
+        transform: rotate(180deg);
     }
     /* contact section */
     
@@ -463,6 +482,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 20px 0;
+        transition: opacity .3s, visibility .3s;
     }
     
     .backdrop.is-hidden {
@@ -473,8 +494,10 @@
     
     .modal {
         position: relative;
-        width: 880px;
-        height: 880px;
+        width: 100%;
+        max-width: 880px;
+        height: 100%;
+        max-height: 880px;
         background-color: var(--color-primary-light);
         border-radius: 32px;
     }
