@@ -543,6 +543,11 @@
         line-height: 1.17;
     }
     
+    .form-button {
+        display: block;
+        margin: 0 auto;
+    }
+    
     .form-input:focus:placeholder {
         color: var(--color-primary-dark);
     }
